@@ -1,0 +1,98 @@
+<div class="preloader-progress">
+    <div class="preloader-progress-bar"></div>
+    <div class="preloader-logo">
+        <h1>
+            <span class="letter" data-original="x" data-final="J">x</span>
+            <span class="letter hidden" data-original=" " data-final="O"
+                >&nbsp;</span
+            >
+            <span class="letter" data-original="J" data-final="N">J</span>
+            <span class="letter hidden" data-original=" " data-final="A"
+                >&nbsp;</span
+            >
+            <span class="letter" data-original="N" data-final="T">N</span>
+            <span class="letter hidden" data-original=" " data-final="A"
+                >&nbsp;</span
+            >
+            <span class="letter" data-original="T" data-final="N">T</span>
+        </h1>
+    </div>
+</div>
+
+<style>
+    .preloader-progress {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100svh;
+        pointer-events: none;
+    }
+
+    .preloader-progress {
+        background-color: var(--base-200);
+        z-index: 1;
+        will-change: opacity;
+    }
+
+    .preloader-progress-bar {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%) scaleX(0);
+        width: 70%;
+        height: 100%;
+        background-color: var(--base-300);
+        transform-origin: left;
+        will-change: transform;
+    }
+
+    .preloader-logo {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        text-align: center;
+        mix-blend-mode: difference;
+        z-index: 2;
+    }
+
+    .preloader-logo h1 {
+        position: relative;
+        color: var(--base-300);
+        font-size: 5rem;
+        font-weight: 500;
+        line-height: 1.2;
+    }
+
+    @media (max-width: 767px) {
+        .preloader-progress-bar {
+            left: 0%;
+            width: 100%;
+            transform: translateX(0%) scaleX(0);
+        }
+
+        .preloader-logo h1 span {
+            font-size: 1.25rem;
+        }
+    }
+
+    @media (max-width: 1023px) {
+        .preloader-progress-bar {
+            left: 0%;
+            width: 100%;
+            transform: translateX(0%) scaleX(0);
+        }
+
+        .preloader-logo h1 {
+            font-size: 2.5rem;
+        }
+    }
+
+    @media (max-width: 1279px) {
+        .preloader-logo h1 {
+            font-size: 4rem;
+        }
+    }
+</style>
