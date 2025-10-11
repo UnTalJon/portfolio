@@ -1,20 +1,24 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Jonatan Luna Franco | Backend Developer</title>
-	</head>
-	<body>
-		<h1>Jonatan Luna Franco | Portfolio</h1>
-	</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="generator" content={Astro.generator} />
+        <title>Jonatan Luna Franco | Backend Developer</title>
+        <link rel="stylesheet" href="../../public/css/styles.css" />
+    </head>
+    <body>
+        <slot />
+        <script
+            is:inline
+            type="module"
+            src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+        ></script>
+        <script
+            is:inline
+            nomodule
+            src="https://unpkg.com/ionicons@7.1.0/dist/ionicons.js"></script>
+        <script is:inline type="module" src="../../public/js/main.js"></script>
+    </body>
 </html>
-
-<style>
-    * {
-        margin: 0;
-        padding: 0;
-    }
-</style>

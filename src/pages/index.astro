@@ -1,10 +1,68 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+import PreloaderProgress from "../components/PreloaderProgress.astro";
+import PreloaderMask from "../components/PreloaderMask.astro";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
+    <PreloaderProgress />
+    <PreloaderMask />
 
+    <div class="preloader-content">
+        <div class="preloader-footer">
+            <p>
+                Spaces unfold in light and shadow, where structure finds its
+                quiet rhythm, and the align in harmony.
+            </p>
+        </div>
+    </div>
+
+    <div class="container">
+        <section class="hero">
+            <div class="hero-inner">
+                <div class="hero-img">
+                    <img src="../../public/assets/images/bg.jpg" alt="" />
+                </div>
+
+                <div class="hero-content">
+                    <div class="header">
+                        <h1>Jonatan Luna Franco</h1>
+                    </div>
+
+                    <div class="contact-btn">
+                        <div class="btn">
+                            <div class="btn-label">
+                                <span>Contact</span>
+                            </div>
+                            <div class="btn-icon">
+                                <ion-icon name="arrow-forward-sharp"></ion-icon>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-btn">
+                        <div class="btn">
+                            <div class="btn-label">
+                                <span>Menu</span>
+                            </div>
+                        </div>
+                        <div class="btn-icon">
+                            <ion-icon name="menu-sharp"></ion-icon>
+                        </div>
+                    </div>
+
+                    <div class="hero-footer">
+                        <h3>Spaces defined thorugh light and silence.</h3>
+                        <p>
+                            Geometry and balance converage, creating
+                            environments that breathe with ease.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
 </Layout>
