@@ -1,0 +1,35 @@
+<div class="preloader-content">
+    <div class="preloader-footer">
+        <blockquote>
+            <p>"The only constant in life is change."</p>
+            <p>Heraclitus</p>
+        </blockquote>
+    </div>
+</div>
+
+<style>
+    .preloader-content {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100svh;
+        pointer-events: none;
+        z-index: 2;
+    }
+
+    .preloader-footer {
+        position: absolute;
+        bottom: 4rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 50%;
+        text-align: center;
+    }
+
+    .preloader-footer p {
+        color: var(--base-300);
+        opacity: 0.5;
+        font-style: italic;
+    }
+</style>

@@ -1,0 +1,56 @@
+<div class="preloader-logo">
+    <h1>
+        <span class="letter" data-original="x" data-final="J">x</span>
+        <span class="letter hidden" data-original=" " data-final="O"
+            >&nbsp;</span
+        >
+        <span class="letter" data-original="J" data-final="N">J</span>
+        <span class="letter hidden" data-original=" " data-final="A"
+            >&nbsp;</span
+        >
+        <span class="letter" data-original="N" data-final="T">N</span>
+        <span class="letter hidden" data-original=" " data-final="A"
+            >&nbsp;</span
+        >
+        <span class="letter" data-original="T" data-final="N">T</span>
+    </h1>
+</div>
+
+<style>
+    .preloader-logo {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        text-align: center;
+        mix-blend-mode: difference;
+        z-index: 2;
+    }
+
+    .preloader-logo h1 {
+        position: relative;
+        color: var(--base-300);
+        font-size: 5rem;
+        font-weight: 500;
+        line-height: 1;
+    }
+
+    @media (max-width: 1200px) {
+        .preloader-logo h1 {
+            font-size: 4rem;
+        }
+    }
+
+    @media (max-width: 800px) {
+        .preloader-logo h1 {
+            font-size: 2rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .preloader-logo h1 {
+            font-size: 1.5rem;
+        }
+    }
+</style>
