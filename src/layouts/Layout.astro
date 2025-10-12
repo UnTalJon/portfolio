@@ -1,3 +1,7 @@
+---
+import GSAPAnimations from "../components/GSAPAnimations.astro";
+---
+
 <!doctype html>
 <html lang="en">
     <head>
@@ -6,10 +10,11 @@
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="generator" content={Astro.generator} />
         <title>Jonatan Luna Franco | Backend Developer</title>
-        <link rel="stylesheet" href="../../public/css/styles.css" />
+        <link rel="stylesheet" href="/css/styles.css" />
     </head>
     <body>
         <slot />
+
         <script
             is:inline
             type="module"
@@ -19,6 +24,6 @@
             is:inline
             nomodule
             src="https://unpkg.com/ionicons@7.1.0/dist/ionicons.js"></script>
-        <script is:inline type="module" src="../../public/js/main.js"></script>
+        <GSAPAnimations />
     </body>
 </html>
