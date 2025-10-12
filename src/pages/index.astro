@@ -1,24 +1,17 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import PreloaderProgress from "../components/PreloaderProgress.astro";
-import PreloaderMask from "../components/PreloaderMask.astro";
+import PreloaderProgress from "../components/preloader/PreloaderProgress.astro";
+import PreloaderMask from "../components/preloader/PreloaderMask.astro";
+import PreloaderFooter from "../components/preloader/PreloaderFooter.astro";
 ---
 
 <Layout>
     <PreloaderProgress />
     <PreloaderMask />
-
-    <div class="preloader-content">
-        <div class="preloader-footer">
-            <p>
-                Spaces unfold in light and shadow, where structure finds its
-                quiet rhythm, and the align in harmony.
-            </p>
-        </div>
-    </div>
+    <PreloaderFooter />
 
     <div class="container">
-        <section class="hero">
+        <section>
             <div class="hero-inner">
                 <div class="hero-img">
                     <img src="/assets/images/bg.jpg" alt="" />
@@ -52,14 +45,21 @@ import PreloaderMask from "../components/PreloaderMask.astro";
                     </div>
 
                     <div class="hero-footer">
-                        <h3>Spaces defined thorugh light and silence.</h3>
+                        <h3>Software Developer</h3>
                         <p>
-                            Geometry and balance converage, creating
-                            environments that breathe with ease.
+                            Precision, logic and creativity converge, creating
+                            solutions that run with ease.
                         </p>
                     </div>
                 </div>
             </div>
         </section>
+        <section>
+            <h1>Who</h1>
+        </section>
+        <section>
+            <h1>Projects</h1>
+        </section>
+        <section><h1>Contact</h1></section>
     </div>
 </Layout>
