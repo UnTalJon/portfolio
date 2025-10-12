@@ -9,9 +9,9 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/node": "9.4.5",
+    "@astrojs/node": "9.4.6",
     "@fontsource-variable/sometype-mono": "5.2.7",
-    "astro": "5.14.1",
+    "astro": "5.14.4",
     "gsap": "3.13.0"
   }
 }
