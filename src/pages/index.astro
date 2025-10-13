@@ -1,8 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import PreloaderProgress from "../components/preloader/PreloaderProgress.astro";
-import PreloaderMask from "../components/preloader/PreloaderMask.astro";
-import PreloaderFooter from "../components/preloader/PreloaderFooter.astro";
+import PreloaderProgress from "@components/preloader/PreloaderProgress.astro";
+import PreloaderMask from "@components/preloader/PreloaderMask.astro";
+import PreloaderFooter from "@components/preloader/PreloaderFooter.astro";
+import Hero from "@components/hero/Hero.astro";
 ---
 
 <Layout>
@@ -12,47 +13,7 @@ import PreloaderFooter from "../components/preloader/PreloaderFooter.astro";
 
     <div class="container">
         <section>
-            <div class="hero-inner">
-                <div class="hero-img">
-                    <img src="/assets/images/bg.jpg" alt="" />
-                </div>
-
-                <div class="hero-content">
-                    <div class="header">
-                        <h1>Jonatan Luna Franco</h1>
-                    </div>
-
-                    <div class="contact-btn">
-                        <div class="btn">
-                            <div class="btn-label">
-                                <span>Contact</span>
-                            </div>
-                            <div class="btn-icon">
-                                <ion-icon name="arrow-forward-sharp"></ion-icon>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="menu-btn">
-                        <div class="btn">
-                            <div class="btn-label">
-                                <span>Menu</span>
-                            </div>
-                        </div>
-                        <div class="btn-icon">
-                            <ion-icon name="menu-sharp"></ion-icon>
-                        </div>
-                    </div>
-
-                    <div class="hero-footer">
-                        <h3>Software Developer</h3>
-                        <p>
-                            Precision, logic and creativity converge, creating
-                            solutions that run with ease.
-                        </p>
-                    </div>
-                </div>
-            </div>
+            <Hero />
         </section>
         <section>
             <h1>Who</h1>
