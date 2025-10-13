@@ -1,0 +1,52 @@
+---
+export interface Props {
+    name: string;
+    text: string;
+    icon: string;
+}
+
+const { name, text, icon } = Astro.props;
+---
+
+<div class={name}>
+    <div class="btn">
+        <div class="btn-label">
+            <span>{text}</span>
+        </div>
+        <div class="btn-icon">
+            <ion-icon name={icon}></ion-icon>
+        </div>
+    </div>
+</div>
+
+<style>
+    .btn {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0.25rem 0.25rem 0.25rem 1.5rem;
+        border-radius: 4rem;
+        color: var(--base-100);
+        background-color: var(--base-300);
+        will-change: transform;
+    }
+
+    .btn-icon {
+        width: 2.5rem;
+        height: 2.5rem;
+        color: var(--base-300);
+        background-color: var(--base-100);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5rem;
+        border-radius: 100%;
+    }
+
+    .btn-label span {
+        font-size: 1rem;
+        font-weight: 450;
+        line-height: 1;
+    }
+</style>
