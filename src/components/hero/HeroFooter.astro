@@ -1,0 +1,50 @@
+<div class="hero-footer">
+    <h3>Software Developer</h3>
+    <p>
+        Precision, logic and creativity converge, creating solutions that run
+        with ease.
+    </p>
+</div>
+
+<style>
+    .hero-footer {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        padding: 2rem;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .hero-footer h3 {
+        font-size: 3rem;
+        line-height: 1.1;
+        width: 50%;
+    }
+
+    .hero-footer p {
+        width: 50%;
+        text-align: right;
+        opacity: 0.5;
+    }
+
+    @media (max-width: 800px) {
+        .hero-footer {
+            flex-direction: column;
+            gap: 0.5rem;
+            align-items: flex-start;
+        }
+
+        .hero-footer h3,
+        .hero-footer p {
+            width: 100%;
+            text-align: left;
+        }
+
+        .hero-footer h3 {
+            font-size: 2rem;
+        }
+    }
+</style>
