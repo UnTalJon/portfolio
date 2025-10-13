@@ -7,6 +7,20 @@
     gsap.registerPlugin(SplitText);
 
     document.fonts.ready.then(() => {
+        function getResponsiveScale() {
+            const width = window.innerWidth;
+
+            if (width < 480) {
+                return 10;
+            } else if (width < 800) {
+                return 7;
+            } else if (width < 1200) {
+                return 6;
+            } else {
+                return 4;
+            }
+        }
+
         function createSplitTexts(elements) {
             const splits = {};
 
@@ -71,7 +85,7 @@
                 selector: ".preloader-footer p",
                 type: "lines",
             },
-            { key: "headerChars", selector: ".header h1", type: "chars" },
+            { key: "headerChars", selector: ".header h1", type: "lines" },
             { key: "heroFooterH3", selector: ".hero-footer h3", type: "lines" },
             { key: "heroFooterP", selector: ".hero-footer p", type: "lines" },
             { key: "btnLabels", selector: ".btn-label span", type: "lines" },
@@ -83,7 +97,7 @@
         gsap.set(
             [
                 splits.footerLines.lines,
-                splits.headerChars.chars,
+                splits.headerChars.lines,
                 splits.heroFooterH3.lines,
                 splits.heroFooterP.lines,
                 splits.btnLabels.lines,
@@ -168,9 +182,9 @@
             .to(
                 ".preloader-mask",
                 {
-                    scale: 5,
-                    duration: 2.5,
-                    ease: "power3.out",
+                    scale: getResponsiveScale(),
+                    duration: 3,
+                    ease: "power2.out",
                 },
                 "<",
             )
@@ -178,12 +192,12 @@
                 ".hero-img",
                 {
                     scale: 1,
-                    duration: 1.5,
+                    duration: 2,
                     ease: "power3.out",
                 },
                 "<",
             )
-            .to(splits.headerChars.chars, {
+            .to(splits.headerChars.lines, {
                 y: 0,
                 stagger: 0.05,
                 duration: 1,
