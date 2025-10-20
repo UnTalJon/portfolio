@@ -1,0 +1,216 @@
+<script>
+    //@ts-nocheck
+    import { fade } from "astro:transitions";
+    import gsap from "gsap";
+    import { CustomEase } from "gsap/CustomEase";
+    import { SplitText } from "gsap/SplitText";
+    import Lenis from "lenis";
+    import GSAPAnimations from "./GSAPAnimations.astro";
+
+    document.addEventListener("DOMContentLoaded", () => {
+        gsap.registerPlugin(CustomEase, SplitText);
+        CustomEase.create("hop", ".87, 0, .13, 1");
+
+        const lenis = new Lenis();
+
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+
+        requestAnimationFrame(raf);
+
+        const textContainers = document.querySelectorAll(".menu-column");
+        let splitTextByContainer = [];
+
+        textContainers.forEach((container) => {
+            const textElements = container.querySelectorAll("a, p");
+            let containerSplits = [];
+
+            textElements.forEach((element) => {
+                const split = SplitText.create(element, {
+                    type: "lines",
+                    mask: "lines",
+                    linesClass: "lines",
+                });
+
+                containerSplits.push(split);
+                gsap.set(split.lines, { y: "-100%" });
+            });
+
+            splitTextByContainer.push(containerSplits);
+        });
+
+        const container = document.querySelector(".container");
+        const menuOverlay = document.querySelector(".menu-overlay");
+        const menuOverlayContainer = document.querySelector(
+            ".menu-overlay-content",
+        );
+        const menuMediaWrapper = document.querySelector(".menu-media-wrapper");
+        const copyContainers = document.querySelector(".menu-column");
+        const menuButton = document.querySelector(".menu-btn");
+        const menuIcon = menuButton.querySelector(".btn-icon");
+        const menuLabel = menuButton.querySelector(".btn-label");
+        const contactButton = document.querySelector(".contact-btn");
+
+        let isMenuOpen = false;
+        let isAnimating = false;
+
+        menuButton.addEventListener("click", () => {
+            if (isAnimating) return;
+
+            if (!isMenuOpen) {
+                isAnimating = true;
+
+                lenis.stop();
+
+                const tl = gsap.timeline();
+
+                tl.to(
+                    container,
+                    {
+                        y: "100svh",
+                        duration: 1,
+                        ease: "hop",
+                    },
+                    "<",
+                )
+                    .to(
+                        menuOverlay,
+                        {
+                            clipPath: "polygon(0 0, 100% 0, 100% 100%,  0 100%",
+                            opacity: 1,
+                            duration: 1,
+                            ease: "hop",
+                        },
+                        "<",
+                    )
+                    .to(
+                        menuOverlayContainer,
+                        {
+                            yPercent: 0,
+                            duration: 1,
+                            ease: "hop",
+                        },
+                        "<",
+                    )
+                    .to(
+                        menuMediaWrapper,
+                        {
+                            opacity: 1,
+                            duration: 0.75,
+                            ease: "power2.out",
+                            delay: 0.5,
+                        },
+                        "<",
+                    )
+                    .to(
+                        contactButton,
+                        {
+                            y: 200,
+                            duration: 1,
+                            ease: "power2.out",
+                        },
+                        "<",
+                    );
+
+                splitTextByContainer.forEach((containerSplits) => {
+                    const copyLines = containerSplits.flatMap(
+                        (split) => split.lines,
+                    );
+
+                    tl.to(
+                        copyLines,
+                        {
+                            y: "0",
+                            duration: 2,
+                            ease: "hop",
+                            stagger: -0.075,
+                        },
+                        -0.15,
+                    );
+                });
+
+                // Mostrar el icono de cerrar el menu
+                menuIcon.innerHTML =
+                    "<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-x'><path d='M18 6 6 18'></path><path d='m6 6 12 12'></path></svg>";
+                menuLabel.innerHTML = "<span>Close</span>";
+
+                tl.call(() => {
+                    isAnimating = false;
+                });
+
+                isMenuOpen = true;
+            } else {
+                isAnimating = true;
+
+                const tl = gsap.timeline();
+
+                tl.to(container, {
+                    y: "0svh",
+                    duration: 1,
+                    ease: "hop",
+                })
+                    .to(
+                        menuOverlay,
+                        {
+                            clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)",
+                            opacity: 0,
+                            duration: 1,
+                            ease: "hop",
+                        },
+                        "<",
+                    )
+                    .to(
+                        menuOverlayContainer,
+                        {
+                            yPercent: -100,
+                            duration: 1,
+                            ease: "hop",
+                        },
+                        "<",
+                    )
+                    .to(
+                        copyContainers,
+                        {
+                            opacity: 0.25,
+                            duration: 1,
+                            ease: "hop",
+                        },
+                        "<",
+                    )
+                    .to(
+                        contactButton,
+                        {
+                            y: 0,
+                            duration: 1,
+                            ease: "power4.inOut",
+                        },
+                        "<",
+                    );
+
+                menuIcon.innerHTML =
+                    "<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-menu'><path d='M4 5h16'></path><path d='M4 12h16'></path><path d='M4 19h16'></path></svg>";
+                menuLabel.innerHTML = "<span>Menu</span>";
+
+                tl.call(() => {
+                    splitTextByContainer.forEach((containerSplits) => {
+                        const copyLines = containerSplits.flatMap(
+                            (split) => split.lines,
+                        );
+
+                        gsap.set(copyLines, { y: "-110%" });
+                    });
+
+                    gsap.set(copyContainers, { opacity: 1 });
+                    gsap.set(menuMediaWrapper, { opacity: 0 });
+
+                    isAnimating = false;
+                    lenis.start();
+                });
+
+                isMenuOpen = false;
+            }
+        });
+    });
+</script>
