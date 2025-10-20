@@ -1,46 +1,68 @@
-# Astro Starter Kit: Basics
+![Project Banner](./public/assets/images/project-banner.gif)
 
-```sh
-bun create astro@latest -- --template basics
+# Portfolio
+
+A modern, responsive portfolio website built with Astro, featuring smooth animations and an elegant design.
+
+## ✨ Features
+
+- **Modern Design**: Clean and professional layout with smooth animations
+- **Responsive**: Optimized for all device sizes
+- **Fast Performance**: Built with Astro for optimal loading speeds
+- **Smooth Animations**: Enhanced user experience with GSAP and Lenis
+- **TypeScript**: Type-safe development environment
+
+## 🛠️ Tech Stack
+
+- **Framework**: [Astro](https://astro.build)
+- **Animations**: [GSAP](https://greensock.com/gsap/)
+- **Smooth Scrolling**: [Lenis](https://lenis.studiofreight.com/)
+- **Icons**: [Lucide](https://lucide.dev/)
+- **Font**: [Sometype Mono](https://www.fontshare.com/fonts/sometype-mono)
+- **Runtime**: [Bun](https://bun.sh/)
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+Make sure you have [Bun](https://bun.sh/) installed on your machine.
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/UnTalJon/portfolio.git
+cd portfolio
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+2. Install dependencies:
+```bash
+bun install
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+3. Start the development server:
+```bash
+bun dev
+```
 
-## 🧞 Commands
+The site will be available at `http://localhost:4321`
 
-All commands are run from the root of the project, from a terminal:
+## 📝 Commands
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `bun install`             | Installs dependencies                            |
-| `bun dev`             | Starts local dev server at `localhost:4321`      |
-| `bun build`           | Build your production site to `./dist/`          |
-| `bun preview`         | Preview your build locally, before deploying     |
-| `bun astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `bun astro -- --help` | Get help using the Astro CLI                     |
+| Command | Action |
+|---------|--------|
+| `bun install` | Install dependencies |
+| `bun dev` | Start development server at `localhost:4321` |
+| `bun build` | Build production site to `./dist/` |
+| `bun preview` | Preview production build locally |
+| `bun astro ...` | Run Astro CLI commands |
 
-## 👀 Want to learn more?
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## 🚀 Deployment
+
+The project includes Docker configuration for easy deployment:
+
+```bash
+docker build -t portfolio .
+docker run -p 3000:3000 portfolio
+```
