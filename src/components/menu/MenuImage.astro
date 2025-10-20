@@ -1,0 +1,32 @@
+<div class="menu-media-wrapper">
+    <img src="/assets/images/menu-bg.webp" alt="menu" />
+</div>
+
+<style>
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .menu-media-wrapper {
+        flex: 2;
+        margin: 2rem;
+        opacity: 0;
+        border-radius: 5rem;
+        overflow: hidden;
+        will-change: opacity;
+    }
+
+    @media (max-wodth: 1200px) {
+        .menu-media-wrapper {
+            border-radius: 3rem;
+        }
+    }
+
+    @media (max-width: 800px) {
+        .menu-media-wrapper {
+            display: none;
+        }
+    }
+</style>

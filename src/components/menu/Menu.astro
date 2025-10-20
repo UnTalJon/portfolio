@@ -1,0 +1,102 @@
+---
+import MenuImage from "./MenuImage.astro";
+import MenuFooter from "./MenuFooter.astro";
+import MenuContent from "./MenuContent.astro";
+---
+
+<nav>
+    <div class="menu-overlay">
+        <div class="menu-overlay-content">
+            <MenuImage />
+            <div class="menu-content-wrapper">
+                <MenuContent />
+                <MenuFooter />
+            </div>
+        </div>
+    </div>
+</nav>
+
+<style is:global>
+    .main-container {
+        position: relative;
+        transform: translateY(0svh);
+        color: var(--base-100);
+    }
+
+    nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100svh;
+        pointer-events: none;
+        overflow: hidden;
+        z-index: 2;
+    }
+
+    .menu-overlay,
+    .menu-overlay-content {
+        position: fixed;
+        border-top-color: 0;
+        left: 0;
+        width: 100vw;
+        height: 100svh;
+        color: lightsteelblue;
+        overflow: hidden;
+        z-index: 1;
+    }
+
+    .menu-overlay {
+        background-color: var(--base-100);
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        will-change: clip-path;
+    }
+
+    .menu-overlay-content {
+        display: flex;
+        transform: translateY(-50%);
+        will-change: transform;
+        pointer-events: all;
+    }
+
+    .menu-content-wrapper img {
+        opacity: 0.25;
+    }
+
+    .menu-content-wrapper {
+        flex: 3;
+        position: relative;
+        display: flex;
+    }
+
+    .menu-column {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .menu-column:nth-child(1) {
+        flex: 3;
+    }
+
+    .menu-column:nth-child(2) {
+        flex: 2;
+    }
+
+    .menu-tag a,
+    .menu-footer p {
+        color: var(--base-300);
+        opacity: 0.5;
+    }
+
+    .line {
+        position: relative;
+        will-change: transform;
+    }
+
+    @media (max-width: 1200px) {
+        .menu-footer {
+            width: 100%;
+        }
+    }
+</style>

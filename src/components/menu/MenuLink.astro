@@ -1,0 +1,33 @@
+---
+export interface Props {
+    href: string;
+    label: string;
+}
+
+const { href, label } = Astro.props;
+---
+
+<div class="menu-link">
+    <a href={href}>{label}</a>
+</div>
+
+<style>
+    a {
+        color: var(--base-300);
+        text-decoration: none;
+        font-size: 5rem;
+        line-height: 1.5;
+    }
+
+    @media (max-width: 1200px) {
+        a {
+            font-size: 4rem;
+        }
+    }
+
+    @media (max-width: 800px) {
+        a {
+            font-size: 3rem;
+        }
+    }
+</style>
