@@ -1,5 +1,4 @@
 ---
-import Button from "@components/common/Button.astro";
 import HeroImage from "./HeroImage.astro";
 import Header from "./Header.astro";
 import HeroFooter from "./HeroFooter.astro";
@@ -10,16 +9,11 @@ import HeroFooter from "./HeroFooter.astro";
 
     <div class="hero-content">
         <Header />
-
-        <Button name="menu-btn" text="Menu" icon="menu-sharp" />
-
-        <Button name="contact-btn" text="Contact" icon="arrow-forward-sharp" />
-
         <HeroFooter />
     </div>
 </div>
 
-<style is:global>
+<style>
     .hero-inner {
         position: relative;
         width: 100%;
@@ -34,20 +28,6 @@ import HeroFooter from "./HeroFooter.astro";
         height: 100%;
         padding: 2rem;
         color: var(--base-300);
-    }
-    .menu-btn {
-        position: fixed;
-        z-index: 10;
-        top: 3rem;
-        right: 3rem;
-    }
-
-    .contact-btn {
-        position: fixed;
-        z-index: 10;
-        bottom: 3rem;
-        left: 50%;
-        transform: translate(-50%);
     }
 
     @media (max-width: 1200px) {

@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import PreloaderProgress from "@components/preloader/PreloaderProgress.astro";
 import PreloaderMask from "@components/preloader/PreloaderMask.astro";
 import PreloaderFooter from "@components/preloader/PreloaderFooter.astro";
+import Menu from "@components/menu/Menu.astro";
 import Hero from "@components/hero/Hero.astro";
 ---
 
@@ -11,15 +12,17 @@ import Hero from "@components/hero/Hero.astro";
     <PreloaderMask />
     <PreloaderFooter />
 
+    <Menu />
+
     <div class="container">
         <section>
             <Hero />
         </section>
-        <section>
+        <section id="about">
             <h1>Who</h1>
         </section>
         <section>
-            <h1>Projects</h1>
+            <h1>Portfolio</h1>
         </section>
         <section><h1>Contact</h1></section>
     </div>

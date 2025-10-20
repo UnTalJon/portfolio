@@ -1,5 +1,8 @@
 ---
-import GSAPAnimations from "../components/GSAPAnimations.astro";
+import GSAPAnimations from "../components/animations/GSAPAnimations.astro";
+import MenuAnimations from "@components/animations/MenuAnimations.astro";
+import Button from "@components/common/Button.astro";
+import { ArrowRight, Menu as MenuIcon } from "@lucide/astro";
 ---
 
 <!doctype html>
@@ -13,17 +16,44 @@ import GSAPAnimations from "../components/GSAPAnimations.astro";
         <link rel="stylesheet" href="/css/styles.css" />
     </head>
     <body>
+        <Button name="menu-btn" text="Menu">
+            <MenuIcon />
+        </Button>
+        <Button name="contact-btn" text="Resume">
+            <ArrowRight />
+        </Button>
+
         <slot />
 
-        <script
-            is:inline
-            type="module"
-            src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
-        ></script>
-        <script
-            is:inline
-            nomodule
-            src="https://unpkg.com/ionicons@7.1.0/dist/ionicons.js"></script>
         <GSAPAnimations />
+        <MenuAnimations />
     </body>
 </html>
+
+<style is:global>
+    .menu-btn {
+        position: fixed;
+        z-index: 10;
+        top: 3rem;
+        right: 3rem;
+    }
+
+    .contact-btn {
+        position: fixed;
+        z-index: 10;
+        bottom: 3rem;
+        left: 50%;
+        transform: translate(-50%);
+    }
+
+    @media (max-width: 480px) {
+        .menu-btn {
+            top: 1.5rem;
+            right: 1.5rem;
+        }
+
+        .contact-btn {
+            bottom: 1.5rem;
+        }
+    }
+</style>

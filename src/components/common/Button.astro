@@ -2,10 +2,9 @@
 export interface Props {
     name: string;
     text: string;
-    icon: string;
 }
 
-const { name, text, icon } = Astro.props;
+const { name, text } = Astro.props;
 ---
 
 <div class={name}>
@@ -14,13 +13,14 @@ const { name, text, icon } = Astro.props;
             <span>{text}</span>
         </div>
         <div class="btn-icon">
-            <ion-icon name={icon}></ion-icon>
+            <slot />
         </div>
     </div>
 </div>
 
 <style>
     .btn {
+        cursor: pointer;
         position: relative;
         display: flex;
         align-items: center;
