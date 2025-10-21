@@ -5,6 +5,9 @@ import PreloaderMask from "@components/preloader/PreloaderMask.astro";
 import PreloaderFooter from "@components/preloader/PreloaderFooter.astro";
 import Menu from "@components/menu/Menu.astro";
 import Hero from "@components/hero/Hero.astro";
+import About from "@components/about/About.astro";
+import Portfolio from "@components/portfolio/Portfolio.astro";
+import Contact from "@components/contact/Contact.astro";
 ---
 
 <Layout>
@@ -15,15 +18,9 @@ import Hero from "@components/hero/Hero.astro";
     <Menu />
 
     <div class="container">
-        <section>
-            <Hero />
-        </section>
-        <section id="about">
-            <h1>Who</h1>
-        </section>
-        <section>
-            <h1>Portfolio</h1>
-        </section>
-        <section><h1>Contact</h1></section>
+        <Hero />
+        <About />
+        <Portfolio />
+        <Contact />
     </div>
 </Layout>
