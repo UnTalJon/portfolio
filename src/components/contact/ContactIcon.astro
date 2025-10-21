@@ -1,0 +1,37 @@
+---
+export interface Props {
+    href: string;
+    name: string;
+}
+
+const { href, name } = Astro.props;
+---
+
+<a href={href} target="_blank">
+    <div class="icon-container">
+        <slot />
+    </div>
+    <div class="icon-name">{name}</div>
+</a>
+
+<style>
+    a {
+        text-decoration: none;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-self: center;
+    }
+
+    .icon-container {
+        align-self: center;
+        width: 48px;
+        height: 48px;
+    }
+
+    .icon-name {
+        text-align: center;
+        color: var(--base-300);
+    }
+</style>

@@ -1,0 +1,48 @@
+---
+import Title from "@components/common/Title.astro";
+import GitHubIcon from "./GitHubIcon.astro";
+import ContactIcon from "./ContactIcon.astro";
+import LinkedInIcon from "./LinkedInIcon.astro";
+import EmailIcon from "./EmailIcon.astro";
+---
+
+<section id="contact" class="section">
+    <Title>Contact</Title>
+    <div class="box">
+        <ContactIcon href="https://github.com/UnTalJon" name="GitHub">
+            <GitHubIcon />
+        </ContactIcon>
+        <ContactIcon
+            href="https://www.linkedin.com/in/untaljon/"
+            name="LinkedIn"
+        >
+            <LinkedInIcon />
+        </ContactIcon>
+        <ContactIcon href="mailto:jnn.luna@proton.me" name="Email">
+            <EmailIcon />
+        </ContactIcon>
+    </div>
+</section>
+
+<style>
+    .box {
+        display: flex;
+        width: 100%;
+        height: 90%;
+        justify-content: space-evenly;
+        padding: 2rem;
+        gap: 2rem;
+    }
+
+    @media (max-width: 800px) {
+        .box {
+            gap: 1rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .box {
+            flex-direction: column;
+        }
+    }
+</style>
