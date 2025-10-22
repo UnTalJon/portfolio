@@ -1,7 +1,9 @@
 ---
 import Title from "@components/common/Title.astro";
-import Project from "./Project.astro";
 import Palantir from "./Palantir.astro";
+import LunaPay from "./LunaPay.astro";
+import JFest from "./JFest.astro";
+import BrainSpark from "./BrainSpark.astro";
 ---
 
 <section id="portfolio" class="section">
@@ -11,13 +13,13 @@ import Palantir from "./Palantir.astro";
             <Palantir />
         </div>
         <div class="project2">
-            <Project title="Bank" description="Bank System" />
+            <LunaPay />
         </div>
         <div class="project3">
-            <Project title="Event" description="Event manager" />
+            <JFest />
         </div>
         <div class="project4">
-            <Project title="Quiz" description="Real-Time Event Handler" />
+            <BrainSpark />
         </div>
     </div>
 </section>
@@ -61,6 +63,12 @@ import Palantir from "./Palantir.astro";
             grid-template-areas: "palantir" "bank" "event" "quiz";
             grid-template-columns: 1fr;
             grid-template-rows: repeat(4, 1fr);
+        }
+    }
+
+    @media (max-width: 480px) {
+        .grid {
+            padding: 0;
         }
     }
 </style>
