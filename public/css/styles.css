@@ -30,10 +30,6 @@ section {
     padding: 1rem;
 }
 
-.section {
-    padding: 2rem;
-}
-
 section > h1 {
     color: var(--base-300);
 }
