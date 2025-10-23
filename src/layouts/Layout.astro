@@ -19,9 +19,11 @@ import { ArrowRight, Menu as MenuIcon } from "@lucide/astro";
         <Button name="menu-btn" text="Menu">
             <MenuIcon />
         </Button>
-        <Button name="contact-btn" text="Resume">
-            <ArrowRight />
-        </Button>
+        <a href="/resources/resume.pdf" target="_blank">
+            <Button name="contact-btn" text="Resume">
+                <ArrowRight />
+            </Button>
+        </a>
 
         <slot />
 
