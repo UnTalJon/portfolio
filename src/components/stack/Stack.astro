@@ -1,0 +1,88 @@
+<section id="footer">
+    <div class="object-container">
+        <div class="object"><p>Spring Boot</p></div>
+        <div class="object"><p>Astro</p></div>
+        <div class="object"><p>Java</p></div>
+        <div class="object"><p>Kotlin</p></div>
+        <div class="object"><p>PHP</p></div>
+        <div class="object"><p>Laravel</p></div>
+        <div class="object"><p>AWS</p></div>
+        <div class="object"><p>Docker</p></div>
+        <div class="object"><p>Javascript / Typescript</p></div>
+        <div class="object"><p>HTML</p></div>
+        <div class="object"><p>CSS</p></div>
+    </div>
+    <div class="footer-content">
+        <h1>Stack</h1>
+    </div>
+</section>
+
+<style>
+    h1 {
+        font-size: 4rem;
+        letter-spacing: 0.05rem;
+        line-height: 1.2;
+    }
+
+    .footer h1 {
+        width: 100%;
+        text-align: center;
+    }
+
+    .footer-content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        pointer-events: none;
+    }
+
+    .footer-content * {
+        pointer-events: auto;
+    }
+
+    .object-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .object {
+        position: absolute;
+        width: max-content;
+        font-size: 2rem;
+        background-color: var(--base-300);
+        color: var(--base-100);
+        padding: 1rem 2rem;
+        border-radius: 10rem;
+        cursor: grab;
+        user-select: none;
+        pointer-events: auto;
+        z-index: 2;
+    }
+
+    .object:active {
+        cursor: grabbing;
+    }
+
+    @media (max-width: 800px) {
+        h1 {
+            font-size: 2rem;
+        }
+
+        .footer h1 {
+            width: 100%;
+        }
+
+        .object {
+            font-size: 1rem;
+        }
+    }
+</style>
